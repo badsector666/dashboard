@@ -4,7 +4,6 @@ module.exports = {
         "import"
     ],
     extends: [
-        "next/core-web-vitals",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/recommended",
         "plugin:import/typescript",
@@ -80,6 +79,16 @@ module.exports = {
                     order: "asc",
                     caseInsensitive: true
                 }
+            }
+        ],
+        "arrow-body-style": [
+            "warn",
+            "as-needed"
+        ],
+        "import/newline-after-import": [
+            "warn",
+            {
+                count: 2
             }
         ]
     }
