@@ -4,11 +4,15 @@ module.exports = {
         "import"
     ],
     extends: [
+        "next/core-web-vitals",
         "plugin:@typescript-eslint/recommended",
         "plugin:import/recommended",
-        "plugin:import/typescript",
+        "plugin:import/typescript"
     ],
     parser: "@typescript-eslint/parser",
+    env: {
+        browser: true,
+    },
     parserOptions: {
         ecmaFeatures: {
             jsx: true
@@ -23,14 +27,17 @@ module.exports = {
         "import/resolver": {
             "typescript": {
                 "alwaysTryTypes": true,
-                "project": "packages/*/tsconfig.json"
+                "project": "packages/**/tsconfig.json"
             }
         },
+        "next": {
+            "rootDir": "packages/dashboard"
+        }
     },
     rules: {
         "indent": "off",
         "@typescript-eslint/indent": [
-            "error",
+            "warn",
             4,
             {
                 "SwitchCase": 1
@@ -45,7 +52,7 @@ module.exports = {
             "double"
         ],
         "semi": [
-            "warn",
+            "error",
             "always"
         ],
         "object-curly-spacing": [
